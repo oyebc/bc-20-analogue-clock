@@ -1,0 +1,11 @@
+
+body {
+    background: url(../images/abstract-music-speaker.jpg) no-repeat center;
+    background-size: cover;
+    image-rendering: auto;
+}
+
+
+.container {
+    padding-top: 100px;
+}
