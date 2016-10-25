@@ -14,7 +14,14 @@ body {
 #current-time {
     color: #FFD700;
     font-size: 100px;
-    text-align: center;
-    padding-top: 250px;
+    text-align: right;
+    padding-top: 150px;
     font-family: 'Exo', sans-serif;
 }
+
+#clock {
+    padding: 10px;
+    border-radius: 50px;
+    background: url('../images/clocknohands.png') no-repeat;
+    background-position: center;
+    background-size: 400px
