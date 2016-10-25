@@ -66,7 +66,7 @@ function displayTime() {
         context.lineWidth = armThickness;
         context.strokeStyle = armColor;
 
-        context.beginPath();
+        context.beginPath(); //method to initiate revolution of hands of the clock
         context.moveTo(clockX, clockY); // Start at the center
         context.lineTo(targetX, targetY); // Draw a line outwards
         context.stroke();
