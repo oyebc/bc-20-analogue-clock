@@ -1,32 +1,23 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ANALOGUE CLOCK</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+    <link rel="stylesheet" href="style/bootstrap.min.css">   
     <link href='https://fonts.googleapis.com/css?family=Exo' rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                
-                <!-- Create clock canvas -->
-
-                <canvas id="clock" width="200" height="200">
-
-                </canvas>
+                <canvas id="clock" width="500" height="500"></canvas> <!--create canvas clock appears on-->
             </div>
-            
-            <!-- Time zone select options -->
 
-            <div class ="col-md-6">
-                <select class = "digital-display" onchange="displayTime(); changeBG();" id="tzSelect">
-
-                </select>
-                 <!-- Digital clock -->
-                <div id="current-time">12:00:00 AM</div>
+            <div class ="col-md-6">  <!-- Time zone select options -->
+                <select class = "form-control" onchange = "displayTime(); changeBG();" id="tzSelect"></select>
+                <div id="current-time">12:00:00 AM</div> <!-- Input the digital clock layout on page-->
             </div>
         </div>
     </div>
@@ -34,9 +25,8 @@
 <!-- Script and audio files located at bottom of code, 
 close to closing body tag to allow basic elements load before higher functionalities --> 
 
-<audio controls loop>
-  <source src="sound/ticking.mp3" id="audio">
-</audio>
+<audio src="sound/ticking.mp3" id="audio">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js_files/timedisplay.js"></script>    
 <script src="js_files/bootstrap.min.js"></script>
 </body>

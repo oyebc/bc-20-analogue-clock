@@ -1,3 +1,10 @@
+#current-time {
+    color: #FFD700;
+    font-size: 90px;
+    text-align: center;
+    padding-top: 350px;
+    font-family: 'Exo', cursive;
+}
 
 body {
     background: url(../images/abstract-music-speaker.jpg) no-repeat center;
@@ -5,23 +12,14 @@ body {
     image-rendering: auto;
 }
 
-
-.container {
-    padding-top: 100px;
-}
-
-
-#current-time {
-    color: #FFD700;
-    font-size: 100px;
-    text-align: right;
-    padding-top: 150px;
-    font-family: 'Exo', sans-serif;
-}
-
 #clock {
     padding: 10px;
     border-radius: 50px;
     background: url('../images/clocknohands.png') no-repeat;
     background-position: center;
-    background-size: 400px
+    background-size: 500px
+
+}
+.container {
+    padding-top: 100px;
+}
