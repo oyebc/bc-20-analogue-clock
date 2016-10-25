@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', startTimer);
+document.addEventListener('DOMContentLoaded', startTimer());
 
   // Get timezone data from api and sort according to zone names
 

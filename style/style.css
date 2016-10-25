@@ -7,8 +7,9 @@
 
 #current-time {
     font-size: 90px;
-    text-align: center;
-    padding-top: 350px;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 0px;
     font-family: 'Exo', cursive;
     color: red;
     animation-name: example;
@@ -22,14 +23,25 @@ body {
     image-rendering: auto;
 }
 
+
+
 #clock {
-    padding: 10px;
+    padding: 0px;
     border-radius: 50px;
     background: url('../images/clock7.png') no-repeat center;
     background-position: center;
-    background-size: 500px
+    background-size: 400px
 
 }
-.container {
-    padding-top: 100px;
+
+#note {
+    font-size: 30px;
+    text-align: right;
+    padding-top: 200px;
+    color: white;
 }
+.container {
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
