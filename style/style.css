@@ -6,10 +6,8 @@
 }
 
 #current-time {
-    font-size: 90px;
+    font-size: 50px;
     text-align: left;
-    padding-top: 20px;
-    padding-left: 0px;
     font-family: 'Exo', cursive;
     color: red;
     animation-name: example;
@@ -18,7 +16,7 @@
 }
 
 body {
-    background: url(../images/nature.jpg) no-repeat center;
+    background: url(../images/abstract-music-speaker.jpg) no-repeat center;
     background-size: cover;
     image-rendering: auto;
 }
@@ -30,18 +28,36 @@ body {
     border-radius: 50px;
     background: url('../images/clock7.png') no-repeat center;
     background-position: center;
-    background-size: 400px
+    background-size: 500px
 
 }
 
+@keyframes titleAnimate {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
 #note {
-    font-size: 30px;
-    text-align: right;
-    padding-top: 200px;
-    color: white;
+    font-family: "Lucida Sans Typewriter", Monospace;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    color: #800000;
+    animation-name: titleAnimate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+
 }
 .container {
     padding-top: 30px;
     padding-left: 20px;
 }
+
+.row {
+    padding: 40px;
+}
+
 

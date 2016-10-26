@@ -34,10 +34,16 @@ function displayTime() {
     var hour = now.getHours() + offset_value;
     var minute = now.getMinutes();
     var second = now.getSeconds();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    /*var theOffset = now.getTimezoneOffset();
+    var offsetHour = theOffset / 60;*/
     
     // Digital time
-
-    var timeString = formatHour(hour) + ":" + addZero(minute) + ":" + addZero(second) + " " + getPeriod(hour);
+    var timeString = day + "-" + month + "-" + year + " " + addZero(formatHour(hour)) + 
+        ":" + addZero(minute) + ":" + addZero(second) + " " + 
+        getPeriod(hour) + " " + "GMT" + " " + offset_value;
     document.querySelector("#current-time").innerHTML = timeString;
 
 
@@ -121,5 +127,7 @@ function changeBG() {
         document.body.style.backgroundImage = 'url(images/nature.jpg)'
     }
 }
+
+
 
 

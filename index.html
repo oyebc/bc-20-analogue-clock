@@ -10,17 +10,17 @@
 </head>
 <body>
     <div class="container">
+        <div id="note">ACCURATE LOCAL TIME IN EVERY TIMEZONE!</div>
+
         <div class="row">
-            <div class="col-md-6">
-                <canvas id="clock" width="400" height="400"></canvas> <!--create canvas clock appears on-->
-                <div id="current-time">12:00:00 AM</div> <!-- Input the digital clock layout on page-->
+            <canvas id="clock" width="500" height="500"></canvas> <!--create canvas clock appears on-->
+            <div class ="col-md-6">  <!-- Time zone select options -->
+                <select class = "form-control" onchange = "displayTime(); changeBG();" id="tzSelect"></select> 
+                <div id="current-time">00-00-2016 12:00:00 AM GMT +4</div> <!-- Input the digital clock layout on page-->   
             </div>
 
-            <div class ="col-md-6">  <!-- Time zone select options -->
-                <div id="note">Accurate local time in every timezone!</div>
-                <select class = "form-control" onchange = "displayTime(); changeBG();" id="tzSelect"></select>     
-            </div>
         </div>
+            
     </div>
 
 <!-- Script and audio files located at bottom of code, 
