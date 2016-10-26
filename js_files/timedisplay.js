@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', startTimer);
+document.addEventListener('DOMContentLoaded', startTimer());
 
   // Get timezone data from api and sort according to zone names
 
   $.get("https://api.timezonedb.com/v2/list-time-zone?key=LOHJU4QICLFS&format=json", function(data){
     zones = data.zones.sort(function(a, b) {
-        return a['zoneName'].toLowerCase() > b['zoneName'].toLowerCase();
+        return a['zoneName'].toLowerCase() - b['zoneName'].toLowerCase();
     });
 
     var options = '';
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', startTimer);
     document.getElementById('tzSelect').innerHTML = options
     });
 
-  //Set the interval between counts. 1000ms translates to 1second
+  //Set the interval between counts. 1000ms translates to 1 second
 
 function startTimer() {
     setInterval(displayTime, 1000);
@@ -34,10 +34,16 @@ function displayTime() {
     var hour = now.getHours() + offset_value;
     var minute = now.getMinutes();
     var second = now.getSeconds();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var day = now.getDate();
+    /*var theOffset = now.getTimezoneOffset();
+    var offsetHour = theOffset / 60;*/
     
     // Digital time
-
-    var timeString = formatHour(hour) + ":" + addZero(minute) + ":" + addZero(second) + " " + getPeriod(hour);
+    var timeString = day + "-" + month + "-" + year + " " + addZero(formatHour(hour)) + 
+        ":" + addZero(minute) + ":" + addZero(second) + " " + 
+        getPeriod(hour) + " " + "GMT" + " " + offset_value;
     document.querySelector("#current-time").innerHTML = timeString;
 
 
@@ -115,11 +121,13 @@ function changeBG() {
         document.body.style.backgroundImage = 'url(images/drippingbulbs.jpg)'
     }
     else if (offset > 0){
-        document.body.style.backgroundImage = 'url(images/nature.jpg)'
-    }
-    else {
         document.body.style.backgroundImage = 'url(images/abstract-music-speaker.jpg)'
     }
+    else {
+        document.body.style.backgroundImage = 'url(images/nature.jpg)'
+    }
 }
+
+
 
 

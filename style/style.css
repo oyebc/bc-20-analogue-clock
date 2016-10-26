@@ -1,9 +1,18 @@
+@keyframes example {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
+
 #current-time {
-    color: #FFD700;
-    font-size: 90px;
-    text-align: center;
-    padding-top: 350px;
+    font-size: 45px;
+    text-align: left;
     font-family: 'Exo', cursive;
+    color: red;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
 }
 
 body {
@@ -12,14 +21,43 @@ body {
     image-rendering: auto;
 }
 
+
+
 #clock {
-    padding: 10px;
+    padding: 0px;
     border-radius: 50px;
-    background: url('../images/clocknohands.png') no-repeat;
+    background: url('../images/clock7.png') no-repeat center;
     background-position: center;
     background-size: 500px
 
 }
-.container {
-    padding-top: 100px;
+
+@keyframes titleAnimate {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
 }
+
+#note {
+    font-family: "Lucida Sans Typewriter", Monospace;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    color: #800000;
+    animation-name: titleAnimate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+
+}
+.container {
+    padding-top: 30px;
+    padding-left: 20px;
+}
+
+.row {
+    padding: 40px;
+}
+
+
