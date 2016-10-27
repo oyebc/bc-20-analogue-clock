@@ -1,32 +1,34 @@
-document.addEventListener('DOMContentLoaded', startTimer());
+document.addEventListener('DOMContentLoaded', startTimer);
 
-  // Get timezone data from api and sort according to zone names
 
-  $.get("https://api.timezonedb.com/v2/list-time-zone?key=LOHJU4QICLFS&format=json", function(data){
-    zones = data.zones.sort(function(a, b) {
+$(function(){
+    zoneInfo = zoneInfo.sort(function(a, b) {
         return a['zoneName'].toLowerCase() - b['zoneName'].toLowerCase();
     });
 
     var options = '';
-    zones.forEach(function(item){
+    zoneInfo.forEach(function(item){
         selected = '';
         if(item['zoneName'].toLowerCase() === 'africa/lagos' ){
              selected = 'selected ="selected"';
         }
-        options += '<option value = "'+ (item.gmtOffset/3600) + '" ' + selected + '>' + item.zoneName + '</option>';
+        var zoneOffset = item.gmtOffset / 3600;
+        var zoneValue = item.zoneName;
+        options += '<option value = "'+ zoneOffset + '"  "'+ selected +'" >' + 
+        zoneValue + ' ' + ' (GMT ' + zoneOffset + ')'  + '</option>';
     })
 
     document.getElementById('tzSelect').innerHTML = options
     });
 
-  //Set the interval between counts. 1000ms translates to 1 second
 
+//Set the interval between counts. 1000ms translates to 1 second
 function startTimer() {
     setInterval(displayTime, 1000);
-    // displayTime();
 }
 
-    //function to get current time
+    
+//function to get current time
 function displayTime() {
     audio.play() // method to play clock sound immediately page loads
     var now = new Date();
@@ -37,13 +39,12 @@ function displayTime() {
     var year = now.getFullYear();
     var month = now.getMonth() + 1;
     var day = now.getDate();
-    /*var theOffset = now.getTimezoneOffset();
-    var offsetHour = theOffset / 60;*/
+    
     
     // Digital time
     var timeString = day + "-" + month + "-" + year + " " + addZero(formatHour(hour)) + 
         ":" + addZero(minute) + ":" + addZero(second) + " " + 
-        getPeriod(hour) + " " + "GMT" + " " + offset_value;
+        getPeriod(hour);
     document.querySelector("#current-time").innerHTML = timeString;
 
 
@@ -82,7 +83,7 @@ function displayTime() {
     drawArm(minute / 60,  4, 0.8, '#08286D'); // Draw Minute hand, set color to navy blue
     drawArm(second / 60,  1, 1.1, '#FF0000'); // Draw Second hand, set color to red
 
-}
+    }
 
     // Function will add extra zero behind, if time is less than 10 so as to always display 2 digits
 
@@ -118,13 +119,13 @@ function changeBG() {
     var offset = zone.options[zone.selectedIndex].value;
     console.log (offset)
     if (offset < 0) {
-        document.body.style.backgroundImage = 'url(images/drippingbulbs.jpg)'
+        document.body.style.backgroundImage = 'url(images/flowers.jpg)'
     }
     else if (offset > 0){
-        document.body.style.backgroundImage = 'url(images/abstract-music-speaker.jpg)'
+        document.body.style.backgroundImage = 'url(images/forest.jpg)'
     }
     else {
-        document.body.style.backgroundImage = 'url(images/nature.jpg)'
+        document.body.style.backgroundImage = 'url(images/dark.png)'
     }
 }
 

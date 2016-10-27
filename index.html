@@ -15,8 +15,10 @@
         <div class="row">
             <canvas id="clock" width="500" height="500"></canvas> <!--create canvas clock appears on-->
             <div class ="col-md-6">  <!-- Time zone select options -->
-                <select class = "form-control" onchange = "displayTime(); changeBG();" id="tzSelect"></select> 
-                <div id="current-time">00-00-2016 12:00:00 AM GMT +4</div> <!-- Input the digital clock layout on page-->   
+                <select style = "color: black; background-color: yellow" class = "form-control" onchange = "displayTime(); changeBG();" id="tzSelect">
+                    
+                </select> 
+                <div id="current-time">00-00-2016 12:00:00 AM</div> <!-- Input the digital clock layout on page-->   
             </div>
 
         </div>
@@ -27,7 +29,8 @@
 close to closing body tag to allow basic elements load before higher functionalities --> 
 
 <audio src="sound/ticking.mp3" id="audio">
-<script src="js_files/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js_files/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js_files/timezonedata.js"></script>
 <script src="js_files/timedisplay.js"></script>    
 <script src="js_files/bootstrap.min.js"></script>
 </body>
