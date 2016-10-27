@@ -1,18 +1,21 @@
-document.addEventListener('DOMContentLoaded', startTimer)
+document.addEventListener('DOMContentLoaded', startTimer);
 
-$.get("https://api.timezonedb.com/v2/list-time-zone?key=LOHJU4QICLFS&format=json", function(data){
-    zones = data.zones.sort(function(a, b) {
+
+$(function(){
+    zoneInfo = zoneInfo.sort(function(a, b) {
         return a['zoneName'].toLowerCase() - b['zoneName'].toLowerCase();
     });
 
     var options = '';
-    zones.forEach(function(item){
+    zoneInfo.forEach(function(item){
         selected = '';
         if(item['zoneName'].toLowerCase() === 'africa/lagos' ){
              selected = 'selected ="selected"';
         }
-        options += '<option value = "'+ (item.gmtOffset/3600) + '" ' + selected + '>' + item.zoneName + "                        GMT   " 
-        + (+item.gmtOffset/3600) + '</option>';
+        var zoneOffset = item.gmtOffset / 3600;
+        var zoneValue = item.zoneName;
+        options += '<option value = "'+ zoneOffset + '"  "'+ selected +'" >' + 
+        zoneValue + ' ' + ' (GMT ' + zoneOffset + ')'  + '</option>';
     })
 
     document.getElementById('tzSelect').innerHTML = options
@@ -80,7 +83,7 @@ function displayTime() {
     drawArm(minute / 60,  4, 0.8, '#08286D'); // Draw Minute hand, set color to navy blue
     drawArm(second / 60,  1, 1.1, '#FF0000'); // Draw Second hand, set color to red
 
-}
+    }
 
     // Function will add extra zero behind, if time is less than 10 so as to always display 2 digits
 
