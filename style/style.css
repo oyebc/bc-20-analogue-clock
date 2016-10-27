@@ -1,12 +1,12 @@
 @keyframes example {
     0%   {color: red;}
-    25%  {color: black;}
+    25%  {color: yellow;}
     50%  {color: blue;}
-    100% {color: brown;}
+    100% {color: green;}
 }
 
 #current-time {
-    font-size: 80px;
+    font-size: 70px;
     text-align: left;
     font-family: 'Orbitron', sans-serif;
     color: red;
@@ -31,15 +31,18 @@ body {
     background-size: 400px
 }
 
+
+
+
 @keyframes titleAnimate {
     0%   {color: red;}
-    25%  {color: brown;}
+    25%  {color: green;}
     50%  {color: blue;}
-    100% {color: black;}
+    100% {color: yellow;}
 }
 
 #note {
-    font-family: "Lucida Sans Typewriter", Monospace;
+    font-family: "Orbitron", sans-serif;
     font-size: 40px;
     text-align: center;
     padding-top: 20px;

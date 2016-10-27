@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ANALOGUE CLOCK</title>
-    <script type="text/javascript" src="js_files/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="script/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/bootstrap.min.css">   
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
@@ -24,16 +24,18 @@
             </div>
 
         </div>
+        <audio loop="loop" autoplay="autoplay" controls="controls" id="audio">   
+            <source src="sound/pop.mp3"/>  
+        </audio>
             
     </div>
 
 <!-- Script and audio files located at bottom of code, 
 close to closing body tag to allow basic elements load before higher functionalities --> 
 
-<audio src="sound/ticking.mp3" id="audio">
-<script type="text/javascript" src="js_files/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="js_files/timezonedata.js"></script>
-<script src="js_files/timedisplay.js"></script>    
-<script src="js_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="script/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="script/timezonedata.js"></script>
+<script src="script/timedisplay.js"></script>    
+<script src="script/bootstrap.min.js"></script>
 </body>
 </html>
