@@ -4,21 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>ANALOGUE CLOCK</title>
+    <script type="text/javascript" src="js_files/jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/bootstrap.min.css">   
-    <link href='https://fonts.googleapis.com/css?family=Exo' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="style/bootstrap-select.min.css">
 </head>
 <body>
     <div class="container">
         <div id="note">ACCURATE LOCAL TIME IN EVERY TIMEZONE!</div>
 
         <div class="row">
-            <canvas id="clock" width="500" height="500"></canvas> <!--create canvas clock appears on-->
+            <canvas id="clock" width="400" height="400"></canvas> <!--create canvas clock appears on-->
             <div class ="col-md-6">  <!-- Time zone select options -->
-                <select style = "color: black; background-color: yellow" class = "form-control" onchange = "displayTime(); changeBG();" id="tzSelect">
+                <select class = "form-control selectpicker" data-live-search="true" onchange = "displayTime(); changeBG();" id="tzSelect">
                     
                 </select> 
-                <div id="current-time">00-00-2016 12:00:00 AM</div> <!-- Input the digital clock layout on page-->   
+                <div id="current-time">12:00:00 AM</div> <!-- Input the digital clock layout on page-->   
             </div>
 
         </div>
@@ -29,7 +31,7 @@
 close to closing body tag to allow basic elements load before higher functionalities --> 
 
 <audio src="sound/ticking.mp3" id="audio">
-<script type="text/javascript" src="js_files/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js_files/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="js_files/timezonedata.js"></script>
 <script src="js_files/timedisplay.js"></script>    
 <script src="js_files/bootstrap.min.js"></script>
