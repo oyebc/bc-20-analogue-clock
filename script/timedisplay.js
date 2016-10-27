@@ -8,7 +8,7 @@ $(function(){
 
     var options = '';
     zoneInfo.forEach(function(item){
-        selected = '';
+        var selected = '';
         if(item["zoneName"].toLowerCase() === "africa/lagos" ){ //check the item to be selected while in lower case
              selected = 'selected ="selected"';
         }
@@ -26,7 +26,7 @@ $(function(){
 function startTimer() {
     setInterval(displayTime, 1000);
     displayTime(); //calling the function ensures time displays every time the page is loaded
-    audio.play() // method to play clock sound immediately page loads
+     // method to play clock sound immediately page loads
 }
 
     
@@ -59,27 +59,27 @@ function displayTime() {
 
     //Write function to cater for drawing the three arms of the clock
     function drawArm(progress, armThickness, armLength, armColor) {
-    var armRadians = (Math.TAU * progress) - (Math.TAU/4);
-    var targetX = clockX + Math.cos(armRadians) * (armLength * clockRadius);
-    var targetY = clockY + Math.sin(armRadians) * (armLength * clockRadius);
+        var armRadians = (Math.TAU * progress) - (Math.TAU/4);
+        var targetX = clockX + Math.cos(armRadians) * (armLength * clockRadius);
+        var targetY = clockY + Math.sin(armRadians) * (armLength * clockRadius);
  
-    context.lineWidth = armThickness;
-    context.strokeStyle = armColor;
+        context.lineWidth = armThickness;
+        context.strokeStyle = armColor;
  
-    context.beginPath();
-    context.moveTo(clockX, clockY); // Start at the center
-    context.lineTo(targetX, targetY); // Draw a line outwards
-    context.stroke();
+        context.beginPath();
+        context.moveTo(clockX, clockY); // Start at the center
+        context.lineTo(targetX, targetY); // Draw a line outwards
+        context.stroke();
     }
 
 
-    /*Clears the canvas rectangle each time of extra lines
-    apart from the default clock hands to account for motion of hands*/
-    context.clearRect(0, 0, canvas.width, canvas.height); 
+        /*Clears the canvas rectangle each time of extra lines
+        apart from the default clock hands to account for motion of hands*/
+        context.clearRect(0, 0, canvas.width, canvas.height); 
 
-    drawArm(hour / 12, 8, 0.50, '#000000'); // call draw arm method to draw Hour hand
-    drawArm(minute / 60,  4, 0.75, '#000000'); // call draw arm method to draw Minute hand
-    drawArm(second / 60,  2, 1.00, '#FF0000'); // call draw arm method to draw Second hand
+        drawArm(hour / 12, 8, 0.50, '#000000'); // call draw arm method to draw Hour hand
+        drawArm(minute / 60,  4, 0.75, '#000000'); // call draw arm method to draw Minute hand
+        drawArm(second / 60,  2, 1.00, '#FF0000'); // call draw arm method to draw Second hand
 }
 
 
@@ -103,6 +103,7 @@ function formatHour(hour) {
     }
     return String(new_hour)
 }
+
 // returns AM if hour is less than 12 and PM if not
 function getPeriod(hour) {
     return (hour < 12) ? "AM" : "PM";
