@@ -1,14 +1,14 @@
 @keyframes example {
     0%   {color: red;}
-    25%  {color: yellow;}
+    25%  {color: black;}
     50%  {color: blue;}
-    100% {color: green;}
+    100% {color: brown;}
 }
 
 #current-time {
-    font-size: 45px;
+    font-size: 80px;
     text-align: left;
-    font-family: 'Exo', cursive;
+    font-family: 'Orbitron', sans-serif;
     color: red;
     animation-name: example;
     animation-duration: 6s;
@@ -16,7 +16,7 @@
 }
 
 body {
-    background: url(../images/dark.png) no-repeat center;
+    background: url(../images/light.jpg) no-repeat center;
     background-size: cover;
     image-rendering: auto;
 }
@@ -28,15 +28,14 @@ body {
     border-radius: 50px;
     background: url('../images/clock7.png') no-repeat center;
     background-position: center;
-    background-size: 500px
-
+    background-size: 400px
 }
 
 @keyframes titleAnimate {
     0%   {color: red;}
-    25%  {color: yellow;}
+    25%  {color: brown;}
     50%  {color: blue;}
-    100% {color: green;}
+    100% {color: black;}
 }
 
 #note {
