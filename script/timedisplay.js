@@ -13,7 +13,7 @@ $(function(){
              selected = 'selected';
         }
         var zoneOffset = Math.ceil(item.gmtOffset / 3600);
-        var zoneValue = item.countryName + '  ' + item.zoneName;
+        var zoneValue = item.countryName + ' - ' + item.zoneName;
         options += '<option value = "'+ zoneOffset + '"  '+ selected +' >' + 
         zoneValue + ' ' + ' (GMT ' + zoneOffset + ')'  + '</option>';
     })
