@@ -5,8 +5,10 @@ Analogue time display with timezone feature
 The clock by default displays the local time. To get the time in another timezone, the user clicks on the select button 
 for the dropdown menu, or otherwise types in the selected region to know the time there.
 
+# The app is hosted on github pages here: https://oreoluwade.github.io/bc-20-analogue-clock/
 
-BASIC CREATION STEPS:
+
+#THIS OUTLINES THE BASIC CREATION STEPS:
 
 * The index.html contains the basic code for the User interface
 
