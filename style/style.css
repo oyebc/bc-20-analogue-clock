@@ -1,18 +1,10 @@
-@keyframes example {
-    0%   {color: red;}
-    25%  {color: yellow;}
-    50%  {color: blue;}
-    100% {color: green;}
-}
 
 #current-time {
     font-size: 70px;
     text-align: left;
     font-family: 'Orbitron', sans-serif;
     color: red;
-    animation-name: example;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
+    
 }
 
 body {
@@ -33,23 +25,13 @@ body {
 
 
 
-
-@keyframes titleAnimate {
-    0%   {color: red;}
-    25%  {color: green;}
-    50%  {color: blue;}
-    100% {color: yellow;}
-}
-
 #note {
     font-family: "Orbitron", sans-serif;
     font-size: 40px;
     text-align: center;
     padding-top: 20px;
-    color: #800000;
-    animation-name: titleAnimate;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+    color: black;
+    
 
 
 }

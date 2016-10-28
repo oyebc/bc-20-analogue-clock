@@ -58,7 +58,7 @@ function displayTime() {
 
   //Write function to cater for drawing the three arms of the clock
   function drawArm(progress, armThickness, armLength, armColor) {
-    var armRadians = (TAU * progress) - (TAU/4);
+    var armRadians = (TAU * progress) - (TAU/4); //ensures tracing starts from 12:00(North)
     var targetX = clockX + Math.cos(armRadians) * (armLength * clockRadius);
     var targetY = clockY + Math.sin(armRadians) * (armLength * clockRadius);
  
@@ -103,21 +103,6 @@ function getPeriod(hour) {
   return (hour < 12) ? "AM" : "PM";
 }
     
-//Initiate background change if the timezone is changed from the dropdown
-function changeBG() {
-  var zone = document.getElementById("tzSelect");
-  var offset = zone.options[zone.selectedIndex].value;
-  console.log (offset)
-  if (offset < 0) {
-    document.body.style.backgroundImage = 'url(images/worldmap2.gif)'
-  }
-  else if (offset > 0){
-    document.body.style.backgroundImage = 'url(images/worldmap3.gif)'
-  }
-  else {
-    document.body.style.backgroundImage = 'url(images/worldmap.gif)'
-  }
-}
 
 
 
