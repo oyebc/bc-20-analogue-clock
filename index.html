@@ -17,22 +17,18 @@
         <div class="row">
             <canvas id="clock" width="400" height="400"></canvas> <!--create canvas clock appears on-->
             <div class ="col-md-6">  <!-- Time zone select options -->
-                <select class = "form-control selectpicker" data-live-search="true" onchange = "displayTime(); changeBG();" id="tzSelect">
+                <select class = "form-control selectpicker" data-style="btn-danger" data-live-search="true" onchange = "displayTime(); changeBG();" id="tzSelect">
                     
                 </select> 
                 <div id="current-time">12:00:00 AM</div> <!-- Input the digital clock layout on page-->   
             </div>
 
         </div>
-        <audio loop="loop" autoplay="autoplay" controls="controls" id="audio">   
+        <audio loop="loop" controls="controls" id="audio">   
             <source src="sound/pop.mp3"/>  
         </audio>
             
     </div>
-
-<!-- Script and audio files located at bottom of code, 
-close to closing body tag to allow basic elements load before higher functionalities --> 
-
 <script type="text/javascript" src="script/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="script/timezonedata.js"></script>
 <script src="script/timedisplay.js"></script>    

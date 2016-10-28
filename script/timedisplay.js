@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', startTimer);
 
 $(function(){
     zoneInfo = zoneInfo.sort(function(a, b) {
-        return a["zoneName"].toLowerCase() > b["zoneName"].toLowerCase(); //sort the timezone data alphabetically
+        return a["countryName"] > b["countryName"]; //sort the timezone data alphabetically
     });
 
     var options = '';
     zoneInfo.forEach(function(item){
         var selected = '';
-        if(item["zoneName"].toLowerCase() === "africa/lagos" ){ //check the item to be selected while in lower case
-             selected = 'selected ="selected"';
+        if(item["countryName"] === "Nigeria" ){ 
+             selected = 'selected';
         }
-        var zoneOffset = item.gmtOffset / 3600;
-        var zoneValue = item.zoneName;
+        var zoneOffset = Math.ceil(item.gmtOffset / 3600);
+        var zoneValue = item.countryName + ' - ' + item.zoneName;
         options += '<option value = "'+ zoneOffset + '"  '+ selected +' >' + 
         zoneValue + ' ' + ' (GMT ' + zoneOffset + ')'  + '</option>';
     })
