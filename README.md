@@ -1,21 +1,22 @@
-# bc-20-analogue-clock
-Analogue time display with timezone feature
+# Analogue-clock Display
+
+Introduction
+
+Timezones and offsets are important in the knowledge of exactly what time it is in a particular location. Hence the application.
+
+It has the following features:
+
+* Local Time display (Analogue and Digital).
+* Timezone/Location change to determine time in zone.
+
+TOOLS USED:
+* HTML5, Javascript
+
+Bootstrap was necessary for styling, jquery for querying the timezone library for zonenames and offset values.
 
 
 The clock by default displays the local time. To get the time in another timezone, the user clicks on the select button 
 for the dropdown menu, or otherwise types in the selected region to know the time there.
 
-# The app is hosted on github pages here: https://oreoluwade.github.io/bc-20-analogue-clock/
+* The app is hosted on github pages here: https://oreoluwade.github.io/bc-20-analogue-clock/
 
-
-#THIS OUTLINES THE BASIC CREATION STEPS:
-
-* The index.html contains the basic code for the User interface
-
-* The style directory contains files that add to the functionality and beautification of the interface.
-
-* Working scripts as well as obtained libraries are in the script directory.
-
-* The ticking sound produced is sourced from the audio file in the sound directory.
-
-* The images directory contains images used for the backgrounds.
