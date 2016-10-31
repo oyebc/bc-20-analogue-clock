@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', startTimer);
 
 
 $(function(){
+
+  // var now = moment();
+  // var momentZoneInfo =  moment.tz.names();
+  // var timezone = moment.tz.guess();
+  // var tmz = moment.tz.zone(timezone);
   zoneInfo = zoneInfo.sort(function(a, b) {
     return a["countryName"] > b["countryName"]; //sort the timezone data alphabetically
   });
@@ -12,10 +17,15 @@ $(function(){
     if(item["countryName"] === "Nigeria" ){ 
       selected = 'selected';
     }
-    var zoneOffset = Math.ceil(item.gmtOffset / 3600);
+    
+    zoneOffset = Math.ceil(item.gmtOffset / 3600);
+    var displayedOffset= formatOffset(zoneOffset);
     var zoneValue = item.countryName + ' - ' + item.zoneName;
     options += '<option value = "'+ zoneOffset + '"  '+ selected +' >' + 
-    zoneValue + ' ' + ' (GMT ' + zoneOffset + ')'  + '</option>';
+    zoneValue + ' ' + ' (GMT' + displayedOffset + ')'  + '</option>';
+
+    // options += '<option value = "'+ moment.tz.zone(timezone) + '"  '+ selected +' >' + 
+    // item + '</option>';
   })
     
   document.getElementById('tzSelect').innerHTML = options //map the data obtained to the select tag on the html doc
@@ -103,6 +113,15 @@ function getPeriod(hour) {
   return (hour < 12) ? "AM" : "PM";
 }
     
+function formatOffset(zoneOffset){
+
+  if(zoneOffset < 0)
+    return " - "+ Math.abs(zoneOffset);
+  else if(zoneOffset > 0)
+    return " + "+ zoneOffset;
+  else
+    return "";
+}
 
 
 
